@@ -1,0 +1,10 @@
+This program retrieves an array of candies distributed through people
+
+function distributeCandies(ArgumentCandies, ArgumentNumOfPeople)
+    declare result array using as length the ArgumentNumOfPeople value
+    for (iterate the ArgumentCandies meanwhile is greater than 0)
+        set in result array its index, by retrieving the mod between the iterator int value and the ArgumentNumOfPeople,
+            and set as a value the Minimum between the ArgumentCandies and the iterator int value + 1
+        subtract from ArgumentCandies the iterator int value + 1
+    return result array
+

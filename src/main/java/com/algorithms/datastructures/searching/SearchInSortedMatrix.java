@@ -1,0 +1,24 @@
+package com.algorithms.datastructures.searching;
+
+/**
+ * Source: https://www.algoexpert.io/questions/Search%20In%20Sorted%20Matrix
+ * Explanation in AlgoExpert document.
+ */
+public class SearchInSortedMatrix {
+    public static int[] searchInSortedMatrix(int[][] matrix, int target) {
+        int row = 0;
+        int col = matrix[0].length - 1;
+
+        while (row < matrix.length && col >= 0) {
+            if (matrix[row][col] > target) {
+                col--;
+            } else if (matrix[row][col] < target) {
+                row++;
+            } else {
+                return new int[] {row, col};
+            }
+        }
+
+        return new int[] {-1, -1};
+    }
+}

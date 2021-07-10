@@ -1,0 +1,20 @@
+This program retrieves the maximum distance between distinct arrays
+
+function maxDistance(ArrayArgument) {
+    declare result to zero
+    declare start with the first element of the first subArray
+    declare end with the last element of the first subArray
+
+    for (iterate the ArrayArgument from its second element) {
+        set in result the maximum between result and
+            the maximum of:
+                - Absolute value of subtracting the last array element and the start field
+                - Absolute value of subtracting the end field and the first array element
+        set in start the minimum of start field and the first element of the array
+        set in end the maximum of end field and the last element of the array
+    end
+    }
+
+    return maximum distance
+end
+}
