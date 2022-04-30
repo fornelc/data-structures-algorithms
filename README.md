@@ -1,6 +1,6 @@
 # data-structures-algorithms
 
-Added different type of algorithms developed in Java, are included algorithms related to the following categories:
+Data structures algorithms developed in Java, are included algorithms related to the following categories:
 * Binary Trees
 * Arrays
 * Binary Search Trees
