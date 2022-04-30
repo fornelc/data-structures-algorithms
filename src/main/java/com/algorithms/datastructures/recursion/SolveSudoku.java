@@ -19,11 +19,12 @@ public class SolveSudoku {
         int currentCol = col;
 
         if (currentCol == board.get(currentRow).size()){
-            if (currentRow == board.size() - 1) {
-                return true;
-            }
             currentCol = 0;
             currentRow++;
+
+            if (currentRow == board.size()) {
+                return true;
+            }
         }
 
         if (board.get(currentRow).get(currentCol) == 0) {
@@ -48,16 +49,14 @@ public class SolveSudoku {
     }
 
     private boolean isValidDigit(int value, int row, int col, ArrayList<ArrayList<Integer>> board) {
-        // check valid digit in the row
-        for (int i = 0; i < board.get(row).size(); i++) {
-            if (i != col && board.get(row).get(i) == value) {
-                return false;
-            }
+
+        if (board.get(row).contains(value)) {
+            return false;
         }
 
         // check valid digit in the column
-        for (int i = 0; i < board.get(row).size(); i++) {
-            if (i != row && board.get(i).get(col) == value) {
+        for (int rowIdx = 0; rowIdx < board.get(row).size(); rowIdx++) {
+            if (board.get(rowIdx).get(col) == value) {
                 return false;
             }
         }
@@ -66,9 +65,11 @@ public class SolveSudoku {
         int startRowBlock = (row / 3) * 3;
         int startColBlock = (col / 3) * 3;
 
-        for (int i = startRowBlock; i < 3; i++) {
-            for (int b = startColBlock; b < 3; b++) {
-                if (i != row && b != col && board.get(i).get(b) == value) {
+        for (int rowIdx = 0; rowIdx < 3; rowIdx++) {
+            for (int colIdx = 0; colIdx < 3; colIdx++) {
+                int rowToCheck = startRowBlock + rowIdx;
+                int colToCheck = startColBlock + colIdx;
+                if (board.get(rowToCheck).get(colToCheck) == value) {
                     return false;
                 }
             }
