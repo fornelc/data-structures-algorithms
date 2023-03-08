@@ -22,6 +22,19 @@ public class ContiguousSawtoothTest {
         @Test
         public void testSolution2() {
                 // given
+                int[] arr = {10, 10, 10};
+                int expected = 0;
+
+                // when
+                int actual = new ContiguousSawtooth().countingContiguousSawtooth(arr);
+
+                // then
+                assertEquals(expected, actual);
+        }
+
+        @Test
+        public void testSolution3() {
+                // given
                 int[] arr = {1, 2, 1, 2, 1};
                 int expected = 10;
 
