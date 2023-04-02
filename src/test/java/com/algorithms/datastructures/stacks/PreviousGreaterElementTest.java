@@ -2,7 +2,7 @@ package com.algorithms.datastructures.stacks;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class PreviousGreaterElementTest {
 
@@ -13,7 +13,7 @@ public class PreviousGreaterElementTest {
 
         int[] output = new PreviousGreaterElement().previousLargerElement(input);
 
-        assertEquals(expected, output);
+        assertArrayEquals(expected, output);
     }
 
 }
