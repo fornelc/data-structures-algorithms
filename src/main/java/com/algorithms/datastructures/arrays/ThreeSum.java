@@ -124,7 +124,7 @@ public class ThreeSum {
     /**
      * 3. No-Sort Approach
      * seen.get(complement) == i is used because you're interested in the compliment found for i number.
-     * It could be that that the hash map contains the compliment, but it was found before for another number.
+     * It could be that the hash map contains the compliment, but it was found before for another number.
      * In that case the compliment shouldn't be used.
      * @param nums
      * @return
