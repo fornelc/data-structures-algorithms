@@ -20,4 +20,14 @@ public class FibonacciNumberTest {
         assertEquals(2, sut.fib(3));
         assertEquals(3, sut.fib(4));
     }
+
+    @Test
+    public void testFibImproved() {
+        int n = 7;
+        int expected = 13;
+
+        int result = sut.fibImproved(n);
+
+        assertEquals(expected, result);
+    }
 }

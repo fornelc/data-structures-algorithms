@@ -18,6 +18,23 @@ public class FibonacciNumber {
 
         return list.get(N);
     }
+
+    public int fibImproved(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        int value1 = 0;
+        int value2 = 1;
+
+        for (int i = 2; i <= n; i++) {
+            int nextValue = value1 + value2;
+            value1 = value2;
+            value2 = nextValue;
+        }
+
+        return value2;
+    }
 }
 
 // 0, 1, 1, 2, 3, 5, 8, 13
