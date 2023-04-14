@@ -4,21 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FibonacciNumber {
-    // Time O(N) | Space O(N)
-    public int fib(int N) {
+
+    /**
+     * Fibonacci algorithm - Time O(N) | Space O(N)
+     * @param n
+     * @return
+     */
+    public int fib(int n) {
         List<Integer> list = new ArrayList<>();
         list.add(0);
         list.add(1);
-        if (N == 0 || N == 1) {
-            return list.get(N);
+        if (n == 0 || n == 1) {
+            return list.get(n);
         }
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i <= n; i++) {
             list.add(list.get(i - 2) + list.get(i - 1));
         }
 
-        return list.get(N);
+        return list.get(n);
     }
 
+    /**
+     * Fibonacci algorithm - Time O(N) | Space O(1)
+     * @param n
+     * @return
+     */
     public int fibImproved(int n) {
         if (n <= 1) {
             return n;
